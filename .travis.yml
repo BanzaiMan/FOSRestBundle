@@ -13,5 +13,6 @@ before_script:
   - sh -c 'if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony=$SYMFONY_VERSION; fi;'
   - composer update --prefer-source
 
-script: phpunit --coverage-clover=coverage.clover
-
+script:
+  - grep ext_entity_whitelist /etc/hhvm/php.ini
+  - phpunit --coverage-clover=coverage.clover
