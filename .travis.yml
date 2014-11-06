@@ -8,6 +8,7 @@ branches:
     - master
     - /^\d+\.\d+$/
 
+
 before_script:
   - composer self-update
   - sh -c 'if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony=$SYMFONY_VERSION; fi;'
